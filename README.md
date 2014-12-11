@@ -36,3 +36,10 @@ The intention is to compose a pipeline such as
 ```
 sed 's/NOTE_TYPE_ID/14/g' db/stock-target-vs-downside.sql | ssh central@central '~/bin/mys devh' | tsv2csv
 ```
+
+To run tests, use:
+
+```
+cabal build && echo runTests | cabal repl
+```
+

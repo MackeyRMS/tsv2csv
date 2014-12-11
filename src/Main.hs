@@ -72,6 +72,11 @@ toCsv_withNewline = TestCase $ got @?= expected
         xs = [["fo\no", "b\nar", "zot"]]
         expected = "\"fo\no\",\"b\nar\",zot\n"
 
+toCsv_withTab =  TestCase $ got @?= expected
+  where got = toCsv xs
+        xs = [["fo\\to", "bar", "zot"]]
+        expected = "fo\\to,bar,zot\n"
+
 tests :: Test
 tests = TestList [
       TestLabel "Always pass"                  alwaysPass
@@ -83,4 +88,5 @@ tests = TestList [
     , TestLabel "toCsv_withComma"              toCsv_withComma
     , TestLabel "toCsv_withQuote"              toCsv_withQuote
     , TestLabel "toCsv_withNewline"            toCsv_withNewline
+    , TestLabel "toCsv_withTab"                toCsv_withTab
   ]
