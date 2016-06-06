@@ -1,4 +1,4 @@
-module Main where
+module Data.Tsv2csv where
 import Control.Monad (liftM, when)
 import Data.List(intercalate)
 import Data.List.Split(splitOn)
