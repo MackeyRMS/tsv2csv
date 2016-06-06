@@ -19,7 +19,7 @@ executable tsv2csv
   main-is:             Main.hs
   -- other-modules:       
   -- other-extensions:    
-  build-depends:       base >=4.6 && <4.7
+  build-depends:       base
                      , split
                      , HUnit
   hs-source-dirs:      src
