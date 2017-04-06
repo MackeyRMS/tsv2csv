@@ -7,8 +7,8 @@ resolver = "nightly-"`date "+%Y-%m-05"`
 dev-all : int-test-basic
 
 ci-all : check
-> stack --install-ghc --resolver $(resolver) build --test --only-dependencies
-> stack --resolver $(resolver) build --test --haddock --no-haddock-deps 
+> stack --install-ghc --resolver nightly build --test --only-dependencies
+> stack --resolver nightly build --test --haddock --no-haddock-deps 
 > stack --install-ghc --resolver lts-8 build --test --only-dependencies
 > stack --resolver lts-8 build --test --haddock --no-haddock-deps
 > stack --install-ghc --resolver lts-7 build --test --only-dependencies
