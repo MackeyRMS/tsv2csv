@@ -1,4 +1,4 @@
-#tsv2csv
+# tsv2csv [![Hackage](https://img.shields.io/hackage/v/tsv2csv.svg)](https://hackage.haskell.org/package/tsv2csv) [![Build Status](https://travis-ci.org/mackeyrms/tsv2csv.svg)](https://travis-ci.org/mackeyrms/tsv2csv)
 
 **Convert tab-delimited text to Excel-style comma-delimited**
 
