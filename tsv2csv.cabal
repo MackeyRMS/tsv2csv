@@ -5,32 +5,34 @@ description:         Convert tab-delimited text to Excel-style comma-delimited
 license:             BSD3
 license-file:        LICENSE
 author:              Bob Grudem
-maintainer:          librarymaintainer@mackeycorp.com
+maintainer:          dev@mackeycorp.com
 -- copyright:           
 category:            Text
 build-type:          Simple
 -- extra-source-files:  
 cabal-version:       >=1.10
 
-source-repository head
-  type:     git
-  location: git://github.com/mackeyrms/tsv2csv.git
 
 library
-  exposed-modules:     Data.Tsv2csv
-  -- other-modules:       
-  -- other-extensions:    
-  build-depends:       base < 5
-                     , split
-                     , HUnit
-  hs-source-dirs:      .
-  default-language:    Haskell2010
-
+  hs-source-dirs:     src
+  exposed-modules:    Tsv2csv
+  build-depends:      base < 5
+                    , split
+  default-language:   Haskell2010
+  ghc-options:        -Wall
+  
 executable tsv2csv
-  main-is:             Main.hs
-  -- other-modules:       
-  -- other-extensions:    
+  main-is:            Main.hs
+  hs-source-dirs:     exec
+  build-depends:      base < 5
+                    , tsv2csv
+  default-language:   Haskell2010
+
+test-suite test 
+  type:                exitcode-stdio-1.0
+  main-is:             Test.hs
+  hs-source-dirs:      test
   build-depends:       base < 5
+                     , HUnit
                      , tsv2csv
-  hs-source-dirs:      src
   default-language:    Haskell2010

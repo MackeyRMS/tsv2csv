@@ -1,36 +1,13 @@
-module Data.Tsv2csv where
-import Control.Monad (liftM, when)
-import Data.List(intercalate)
-import Data.List.Split(splitOn)
-import System.IO (hPutStrLn, stderr)
-import Test.HUnit
+module Main where
 
+import           Control.Monad (when)
+import           System.IO     (hPutStrLn, stderr)
+import           Test.HUnit
+
+import           Tsv2csv
+
+main :: IO ()
 main = do
-  ss <- getContents
-  putStrLn $ toCsv . fromTsv $ ss
-
-fromTsv :: String -> [[String]]
-fromTsv = map (splitOn "\t") . lines
-
-toCsv :: [[String]] -> String
-toCsv = unlines . map (intercalate ",") . map (map csvEscape)
-
-csvEscape :: String -> String
-csvEscape s
-  | ','  `elem` s = s'
-  | '\"' `elem` s = s'
-  | '\n' `elem` s = s'
-  | otherwise     = s
-  where s' = ('\"' : s) ++ "\""
-
-------------------------------------------------------------------------
--- Self tests
-
--- cabal repl
---   runTests
-
-runTests :: IO ()
-runTests = do
     Counts c t e f <- runTestTT tests
     when (e > 0 || f > 0) $ hPutStrLn stderr $ "Failure"
 
