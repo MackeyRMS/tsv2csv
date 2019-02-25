@@ -5,7 +5,7 @@ description:         Convert tab-delimited text to Excel-style comma-delimited
 license:             AllRightsReserved
 author:              Bob Grudem
 maintainer:          dev@mackeycorp.com
--- copyright:           (c) 2019 Mackey LLC
+ copyright:           (c) 2019 Mackey LLC
 category:            Text
 build-type:          Simple
 -- extra-source-files:  
