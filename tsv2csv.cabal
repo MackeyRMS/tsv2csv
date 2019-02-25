@@ -2,11 +2,10 @@ name:                tsv2csv
 version:             0.1.0.3
 synopsis:            Convert tsv to csv
 description:         Convert tab-delimited text to Excel-style comma-delimited
-license:             BSD3
-license-file:        LICENSE
+license:             AllRightsReserved
 author:              Bob Grudem
 maintainer:          dev@mackeycorp.com
--- copyright:           
+-- copyright:           (c) 2019 Mackey LLC
 category:            Text
 build-type:          Simple
 -- extra-source-files:  
